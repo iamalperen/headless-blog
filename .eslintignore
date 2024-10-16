@@ -1,0 +1,8 @@
+# .eslintignore
+
+*.config.js
+*.config.cjs
+*.config.mjs
+.*rc.js
+.*rc.cjs
+.*rc.mjs

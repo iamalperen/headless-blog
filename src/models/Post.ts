@@ -3,6 +3,7 @@ import { Entry, Asset } from "contentful";
 
 import { Author } from "./Author";
 import { Category } from "./Category";
+import { Comment } from "./Comment";
 import { Tag } from "./Tag";
 
 export interface PostFields {
@@ -17,6 +18,7 @@ export interface PostFields {
   publishedDate: string;
   isPopular?: boolean;
   views: number;
+  comments?: Entry<Comment>[];
 }
 
 export type Post = Entry<PostFields>;

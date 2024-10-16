@@ -10,7 +10,17 @@
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write src",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
-    "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix"
+    "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix"
+    ]
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "15.22.11",
@@ -38,12 +48,14 @@
     "eslint-plugin-jsx-a11y": "6.10.0",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.37.1",
+    "husky": "8.0.0",
+    "lint-staged": "15.2.10",
     "prettier": "3.3.3",
     "stylelint": "15.10.1",
-    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-prettier": "9.0.5",
     "stylelint-config-standard": "34.0.0",
-    "stylelint-order": "^6.0.4",
-    "stylelint-stylistic": "^0.4.5",
+    "stylelint-order": "6.0.4",
+    "stylelint-stylistic": "0.4.5",
     "typescript": "5"
   }
 }

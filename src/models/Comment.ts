@@ -1,12 +1,12 @@
-import { Entry } from "contentful";
+import { Entry, EntrySkeletonType } from "contentful";
 
-import { Post } from "./Post";
+import { PostFields } from "./Post";
 
-export interface CommentFields {
+export interface CommentFields extends EntrySkeletonType {
   author: string;
   email: string;
   content: string;
-  post: Entry<Post>;
+  post: Entry<PostFields>;
   publishedDate: string;
 }
 

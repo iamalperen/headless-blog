@@ -1,6 +1,6 @@
 import { Entry } from "contentful";
 
-import client from "./contentfulClient";
+import { client } from "./contentfulClient";
 
 export const fetchCategories = async (): Promise<Entry<any>[]> => {
   const entries = await client.getEntries({
@@ -15,7 +15,7 @@ export const fetchPostsByCategory = async (
   const entries = await client.getEntries({
     content_type: "post",
     "fields.category.fields.slug": categorySlug,
-    order: "-fields.publishedDate",
+    order: ["-fields.publishedDate"],
   });
   return entries.items;
 };

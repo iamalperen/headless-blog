@@ -20,9 +20,9 @@ export default function HomeContainer({
         <h2>Recent Posts</h2>
         {posts.map((post) => (
           <div key={post.sys.id}>
-            <h3>{post.fields.title}</h3>
-            <p>{post.fields.excerpt}</p>
-            <a href={`/posts/${post.fields.slug}`}>Read more</a>
+            <h3>{post.fields.title as string}</h3>
+            <p>{post.fields.excerpt as string}</p>
+            <a href={`/posts/${post.fields.slug as string}`}>Read more</a>
           </div>
         ))}
       </section>
@@ -33,8 +33,8 @@ export default function HomeContainer({
           <ul>
             {categories.map((category) => (
               <li key={category.sys.id}>
-                <a href={`/category/${category.fields.slug}`}>
-                  {category.fields.name}
+                <a href={`/category/${category.fields.slug as string}`}>
+                  {category.fields.name as string}
                 </a>
               </li>
             ))}
@@ -45,8 +45,8 @@ export default function HomeContainer({
           <h2>Popular Posts</h2>
           {popularPosts.map((post) => (
             <div key={post.sys.id}>
-              <h3>{post.fields.title}</h3>
-              <a href={`/posts/${post.fields.slug}`}>Read more</a>
+              <h3>{post.fields.title as string}</h3>
+              <a href={`/posts/${post.fields.slug as string}`}>Read more</a>
             </div>
           ))}
         </section>

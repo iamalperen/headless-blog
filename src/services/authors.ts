@@ -1,6 +1,6 @@
 import { Entry } from "contentful";
 
-import client from "./contentfulClient";
+import { client } from "./contentfulClient";
 
 export const fetchAuthors = async (): Promise<Entry<any>[]> => {
   const entries = await client.getEntries({
@@ -26,7 +26,7 @@ export const fetchPostsByAuthor = async (
   const entries = await client.getEntries({
     content_type: "post",
     "fields.author.fields.slug": authorSlug,
-    order: "-fields.publishedDate",
+    order: ["-fields.publishedDate"],
   });
   return entries.items;
 };

@@ -13,6 +13,7 @@ module.exports = {
         "stylistic/max-empty-lines": 1,
         "stylistic/no-eol-whitespace": true,
         "order/properties-alphabetical-order": true,
+        "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
     },
     ignoreFiles: [
         "**/node_modules/**",

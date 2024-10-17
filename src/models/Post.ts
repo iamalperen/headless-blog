@@ -1,24 +1,24 @@
 import { Document } from "@contentful/rich-text-types";
-import { Entry, Asset } from "contentful";
+import { Entry, Asset, EntrySkeletonType } from "contentful";
 
-import { Author } from "./Author";
-import { Category } from "./Category";
-import { Comment } from "./Comment";
-import { Tag } from "./Tag";
+import { AuthorFields } from "./Author";
+import { CategoryFields } from "./Category";
+import { CommentFields } from "./Comment";
+import { TagFields } from "./Tag";
 
-export interface PostFields {
+export interface PostFields extends EntrySkeletonType {
   title: string;
   slug: string;
   excerpt?: string;
   content: Document;
   featuredImage?: Asset;
-  author: Entry<Author>;
-  tags?: Entry<Tag>[];
-  category?: Entry<Category>;
+  author: Entry<AuthorFields>;
+  tags?: Entry<TagFields>[];
+  category?: Entry<CategoryFields>;
   publishedDate: string;
   isPopular?: boolean;
   views: number;
-  comments?: Entry<Comment>[];
+  comments?: Entry<CommentFields>[];
 }
 
 export type Post = Entry<PostFields>;

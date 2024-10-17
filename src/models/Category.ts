@@ -1,6 +1,6 @@
-import { Entry } from "contentful";
+import { Entry, EntrySkeletonType } from "contentful";
 
-export interface CategoryFields {
+export interface CategoryFields extends EntrySkeletonType {
   name: string;
   slug: string;
   description?: string;

@@ -5,14 +5,14 @@
   padding: 0.5rem;
 }
 
-.header-container {
+.headerContainer {
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
 }
 
-.header-logo {
+.headerLogo {
   color: #5a5a5a;
   font-size: 1.25rem;
   font-weight: 400;

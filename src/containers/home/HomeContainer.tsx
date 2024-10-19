@@ -78,7 +78,12 @@ export default function HomeContainer({
           <ul className={styles.tagsListContainer}>
             {tags.map((tag) => (
               <li key={tag.sys.id} className={styles.tag}>
-                {tag.fields.name}
+                <Link
+                  href={`/tag/${tag.fields.slug}`}
+                  className={styles.tagUrl}
+                >
+                  {tag.fields.name}
+                </Link>
               </li>
             ))}
           </ul>

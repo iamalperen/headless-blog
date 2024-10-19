@@ -9,10 +9,11 @@ interface PostProps {
   content: any;
   featuredImage?: any;
   publishedDate: string;
+  tags?: any;
 }
 
 export const PostComponent = (props: PostProps) => {
-  const { title, content, featuredImage, publishedDate } = props;
+  const { title, content, featuredImage, publishedDate, tags } = props;
   const parsedImage = parseContentfulContentImage(featuredImage);
 
   return (
@@ -27,6 +28,13 @@ export const PostComponent = (props: PostProps) => {
         />
       )}
       <div className={styles.content}>{documentToReactComponents(content)}</div>
+      <div className={styles.tags}>
+        {tags?.map((tag: any) => (
+          <span key={tag.sys.id} className={styles.tag}>
+            {tag.fields.name}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };

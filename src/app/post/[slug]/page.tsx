@@ -35,6 +35,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       content={post.fields.content}
       featuredImage={post.fields.featuredImage}
       publishedDate={post.fields.publishedDate}
+      tags={post.fields.tags}
     />
   );
 }

@@ -43,3 +43,14 @@ export const fetchPostBySlug = async (slug: string) => {
 
   return entries.items[0];
 };
+
+export const fetchPostsByTag = async (tagId: string) => {
+  const entries = await client.getEntries<BlogPostSkeleton>({
+    content_type: "post",
+    order: ["-fields.publishedDate"],
+    limit: 10,
+    "fields.tags.sys.id": tagId, // Assuming 'tags' field contains the tag references
+  });
+
+  return entries.items || [];
+};

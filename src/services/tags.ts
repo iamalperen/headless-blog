@@ -11,3 +11,17 @@ export const fetchLatestTags = async () => {
 
   return entries.items || [];
 };
+
+export const fetchTagBySlug = async (slug: string) => {
+  const entries = await client.getEntries({
+    content_type: "tag",
+    "fields.slug": slug,
+    limit: 1,
+  });
+
+  if (!entries.items.length) {
+    return null;
+  }
+
+  return entries.items[0];
+};

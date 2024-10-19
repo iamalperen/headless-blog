@@ -1,15 +1,14 @@
-import { Entry, Asset, EntrySkeletonType } from "contentful";
+import { EntryFieldTypes } from "contentful";
 
-export interface AuthorFields extends EntrySkeletonType {
+export type AuthorSkeleton = {
+  contentTypeId: "author";
   fields: {
-    name: string;
-    slug: string;
-    bio?: string;
-    avatar?: Asset;
-    twitter?: string;
-    linkedin?: string;
-    instagram?: string;
+    name: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+    bio: EntryFieldTypes.Text;
+    avatar: EntryFieldTypes.AssetLink;
+    twitter: EntryFieldTypes.Text;
+    linkedin: EntryFieldTypes.Text;
+    instagram: EntryFieldTypes.Text;
   };
-}
-
-export type Author = Entry<AuthorFields>;
+};

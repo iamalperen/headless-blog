@@ -1,21 +1,28 @@
 import { Entry } from "contentful";
 
+import { CategorySkeleton } from "@/models/Category";
+
 import { client } from "./contentfulClient";
 
-export const fetchCategories = async (): Promise<Entry<any>[]> => {
-  const entries = await client.getEntries({
+export const fetchCategories = async () => {
+  const entries = await client.getEntries<CategorySkeleton>({
     content_type: "category",
   });
-  return entries.items;
+  return entries.items || [];
 };
 
-export const fetchPostsByCategory = async (
-  categorySlug: string,
-): Promise<Entry<any>[]> => {
-  const entries = await client.getEntries({
-    content_type: "post",
-    "fields.category.fields.slug": categorySlug,
-    order: ["-fields.publishedDate"],
+export const fetchCategoryBySlug = async (
+  slug: string,
+): Promise<Entry<CategorySkeleton> | null> => {
+  const entries = await client.getEntries<CategorySkeleton>({
+    content_type: "category",
+    "fields.slug": slug,
+    limit: 1,
   });
-  return entries.items;
+
+  if (entries.items.length > 0) {
+    return entries.items[0];
+  }
+
+  return null;
 };

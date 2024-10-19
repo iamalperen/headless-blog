@@ -1,54 +1,55 @@
+import { Entry } from "contentful";
+import Link from "next/link";
 import React from "react";
 
-import { Category } from "@/models/Category";
-import { Post } from "@/models/Post";
+import { PostPreview } from "@/components/post/PostPreview";
+import { parseContentfulContentImage } from "@/lib/parseContentfulImageAsset";
+import { CategorySkeleton } from "@/models/Category";
+import { BlogPostSkeleton } from "@/models/Post";
+
+import styles from "./HomeContainer.module.css";
 
 interface HomeContainerProps {
-  posts: Post[];
-  popularPosts: Post[];
-  categories: Category[];
+  posts: Array<Entry<BlogPostSkeleton, undefined, string>>;
+  categories: Array<Entry<CategorySkeleton, undefined, string>>;
 }
 
 export default function HomeContainer({
   posts,
-  popularPosts,
   categories,
 }: HomeContainerProps) {
   return (
-    <div>
-      <section>
-        <h2>Recent Posts</h2>
+    <div className={styles.home}>
+      <section className={styles.homeBlogPosts}>
         {posts.map((post) => (
-          <div key={post.sys.id}>
-            <h3>{post.fields.title as string}</h3>
-            <p>{post.fields.excerpt as string}</p>
-            <a href={`/posts/${post.fields.slug as string}`}>Read more</a>
-          </div>
+          <PostPreview
+            key={post.fields.slug}
+            title={post.fields.title}
+            date={post.fields.publishedDate}
+            summary={post.fields.excerpt}
+            imageUrl={
+              parseContentfulContentImage(post.fields.featuredImage)?.src
+            }
+            slug={post.fields.slug}
+          />
         ))}
+        {posts.length === 0 && <p>No posts found.</p>}
       </section>
-
-      <aside>
-        <section>
-          <h2>Categories</h2>
+      <aside className={styles.homeAside}>
+        <section className={styles.categories}>
+          <h3 className={styles.categoriesTitle}>Categories</h3>
           <ul>
-            {categories.map((category) => (
-              <li key={category.sys.id}>
-                <a href={`/category/${category.fields.slug as string}`}>
-                  {category.fields.name as string}
-                </a>
+            {categories?.map((category) => (
+              <li key={category.sys.id} className={styles.categoryContainer}>
+                <Link
+                  href={`/category/${category.fields.slug}`}
+                  className={styles.category}
+                >
+                  {category.fields.name}
+                </Link>
               </li>
             ))}
           </ul>
-        </section>
-
-        <section>
-          <h2>Popular Posts</h2>
-          {popularPosts.map((post) => (
-            <div key={post.sys.id}>
-              <h3>{post.fields.title as string}</h3>
-              <a href={`/posts/${post.fields.slug as string}`}>Read more</a>
-            </div>
-          ))}
         </section>
       </aside>
     </div>

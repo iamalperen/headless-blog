@@ -1,8 +1,9 @@
-import { Entry, EntrySkeletonType } from "contentful";
+import { EntryFieldTypes } from "contentful";
 
-export interface TagFields extends EntrySkeletonType {
-  name: string;
-  slug: string;
-}
-
-export type Tag = Entry<TagFields>;
+export type TagSkeleton = {
+  contentTypeId: "tag";
+  fields: {
+    name: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+  };
+};

@@ -1,13 +1,14 @@
-import { Entry, EntrySkeletonType } from "contentful";
+import { EntryFieldTypes } from "contentful";
 
-import { PostFields } from "./Post";
+import { BlogPostSkeleton } from "./Post";
 
-export interface CommentFields extends EntrySkeletonType {
-  author: string;
-  email: string;
-  content: string;
-  post: Entry<PostFields>;
-  publishedDate: string;
-}
-
-export type Comment = Entry<CommentFields>;
+export type CommentSkeleton = {
+  contentTypeId: "comment";
+  fields: {
+    author: EntryFieldTypes.Text;
+    email: EntryFieldTypes.Text;
+    content: EntryFieldTypes.Text;
+    post: EntryFieldTypes.EntryLink<BlogPostSkeleton>;
+    publishedDate: EntryFieldTypes.Date;
+  };
+};

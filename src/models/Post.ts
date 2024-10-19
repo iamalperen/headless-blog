@@ -1,24 +1,25 @@
-import { Document } from "@contentful/rich-text-types";
-import { Entry, Asset, EntrySkeletonType } from "contentful";
+import { EntryFieldTypes } from "contentful";
 
-import { AuthorFields } from "./Author";
-import { CategoryFields } from "./Category";
-import { CommentFields } from "./Comment";
-import { TagFields } from "./Tag";
+import { AuthorSkeleton } from "@/models/Author";
+import { CategorySkeleton } from "@/models/Category";
+import { CommentSkeleton } from "@/models/Comment";
 
-export interface PostFields extends EntrySkeletonType {
-  title: string;
-  slug: string;
-  excerpt?: string;
-  content: Document;
-  featuredImage?: Asset;
-  author: Entry<AuthorFields>;
-  tags?: Entry<TagFields>[];
-  category?: Entry<CategoryFields>;
-  publishedDate: string;
-  isPopular?: boolean;
-  views: number;
-  comments?: Entry<CommentFields>[];
-}
+import { TagSkeleton } from "./Tag";
 
-export type Post = Entry<PostFields>;
+export type BlogPostSkeleton = {
+  contentTypeId: "post";
+  fields: {
+    title: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+    excerpt: EntryFieldTypes.Text;
+    content: EntryFieldTypes.RichText;
+    featuredImage: EntryFieldTypes.AssetLink;
+    author: EntryFieldTypes.EntryLink<AuthorSkeleton>;
+    tags: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TagSkeleton>>;
+    category: EntryFieldTypes.EntryLink<CategorySkeleton>;
+    publishedDate: EntryFieldTypes.Date;
+    isPopular: EntryFieldTypes.Boolean;
+    views: EntryFieldTypes.Integer;
+    comments: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<CommentSkeleton>>;
+  };
+};

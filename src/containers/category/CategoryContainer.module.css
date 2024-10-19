@@ -1,0 +1,10 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.categoryTitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+}

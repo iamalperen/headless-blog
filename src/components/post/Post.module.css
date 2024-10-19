@@ -1,0 +1,49 @@
+.post {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+
+.postImage {
+  height: auto;
+  width: 100%;
+}
+
+.postContent {
+  padding: 1rem;
+}
+
+.title {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.date {
+  color: #666;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+.readMoreButton {
+  background-color: #007bff;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: auto;
+}
+
+.readMoreButton:hover {
+  background-color: #0056b3;
+}

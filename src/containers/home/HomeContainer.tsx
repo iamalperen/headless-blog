@@ -6,6 +6,7 @@ import { PostPreview } from "@/components/post/PostPreview";
 import { parseContentfulContentImage } from "@/lib/parseContentfulImageAsset";
 import { CategorySkeleton } from "@/models/Category";
 import { BlogPostSkeleton } from "@/models/Post";
+import { TagSkeleton } from "@/models/Tag";
 
 import styles from "./HomeContainer.module.css";
 
@@ -13,12 +14,14 @@ interface HomeContainerProps {
   posts: Array<Entry<BlogPostSkeleton, undefined, string>>;
   popularPosts: Array<Entry<BlogPostSkeleton, undefined, string>>;
   categories: Array<Entry<CategorySkeleton, undefined, string>>;
+  tags: Array<Entry<TagSkeleton, undefined, string>>;
 }
 
 export default function HomeContainer({
   posts,
   popularPosts,
   categories,
+  tags,
 }: HomeContainerProps) {
   return (
     <div className={styles.home}>
@@ -65,6 +68,17 @@ export default function HomeContainer({
                 >
                   {post.fields.title}
                 </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.tags}>
+          <h3 className={styles.tagsTitle}>Tags</h3>
+          <ul className={styles.tagsListContainer}>
+            {tags.map((tag) => (
+              <li key={tag.sys.id} className={styles.tag}>
+                {tag.fields.name}
               </li>
             ))}
           </ul>

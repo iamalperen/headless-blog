@@ -8,9 +8,6 @@ export const fetchPosts = async () => {
     order: ["-fields.publishedDate"],
     limit: 10,
   });
-
-  console.log(entries.items);
-
   return entries.items || [];
 };
 

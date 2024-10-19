@@ -18,8 +18,6 @@ export default function HomeContainer({
   posts,
   categories,
 }: HomeContainerProps) {
-  console.log(posts);
-
   return (
     <div className={styles.home}>
       <section className={styles.homeBlogPosts}>

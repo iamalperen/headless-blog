@@ -14,7 +14,7 @@ export async function generateMetadata({
   const category = await fetchCategoryBySlug(slug);
 
   return createMetadata({
-    title: `${category?.fields?.name} Category`,
+    title: `${category?.fields?.name} Posts`,
     description: `Explore the ${category?.fields?.name} category and its content.`,
     image: "https://yoursite.com/images/placeholder.png",
     url: `https://yoursite.com/category/${slug}`,

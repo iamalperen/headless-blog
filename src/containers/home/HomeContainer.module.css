@@ -28,14 +28,14 @@
   background: #fff;
   border: 1px solid #eee;
   border-radius: .25rem;
-  color: #5A5A5A;
+  color: #5a5a5a;
   padding: 1rem;
   width: 100%;
 }
 
 .categoriesTitle {
   border-bottom: 1px solid #eee;
-  color: #5A5A5A;
+  color: #5a5a5a;
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
@@ -46,7 +46,7 @@
 .categoryContainer {
   background-color: #f4f7f6;
   box-sizing: border-box;
-  color: #5A5A5A;
+  color: #5a5a5a;
   font-size: 14px;
   font-weight: 400;
   list-style: none;
@@ -62,7 +62,7 @@
   align-items: center;
   background-color: transparent;
   box-sizing: border-box;
-  color: #444;
+  color: #5a5a5a;
   display: flex;
   font-size: 14px;
   font-weight: 400;

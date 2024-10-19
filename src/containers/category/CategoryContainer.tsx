@@ -23,7 +23,7 @@ export const CategoryContainer = ({
   return (
     <div className={styles.category}>
       <h1 className={styles.categoryTitle}>{category.fields.name as string}</h1>
-      <ul>
+      <div className={styles.blogPosts}>
         {posts.map((post) => (
           <PostPreview
             key={post.fields.slug}
@@ -36,7 +36,7 @@ export const CategoryContainer = ({
             slug={post.fields.slug}
           />
         ))}
-      </ul>
+      </div>
       {posts.length === 0 && <p>No posts found in this category!</p>}
     </div>
   );

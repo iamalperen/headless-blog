@@ -2,7 +2,7 @@ import { Entry } from "contentful";
 import Link from "next/link";
 import React from "react";
 
-import { PostPreview } from "@/components/post/PostPreview";
+import { PostPreview } from "@/components/post-preview/PostPreview";
 import { parseContentfulContentImage } from "@/lib/parseContentfulImageAsset";
 import { CategorySkeleton } from "@/models/Category";
 import { BlogPostSkeleton } from "@/models/Post";

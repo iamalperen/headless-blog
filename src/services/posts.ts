@@ -29,3 +29,17 @@ export const fetchPopularPosts = async () => {
   });
   return entries.items || [];
 };
+
+export const fetchPostBySlug = async (slug: string) => {
+  const entries = await client.getEntries<BlogPostSkeleton>({
+    content_type: "post",
+    limit: 1,
+    "fields.slug": slug,
+  });
+
+  if (!entries.items.length) {
+    return null;
+  }
+
+  return entries.items[0];
+};

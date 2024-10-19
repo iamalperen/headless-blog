@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./Post.module.css";
+import styles from "./PostPreview.module.css";
 
 interface PostProps {
   title: string;
@@ -24,7 +24,7 @@ export const PostPreview: React.FC<PostProps> = ({
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.date}>{date}</p>
         <p className={styles.summary}>{summary}</p>
-        <a href={`/posts/${slug}`} className={styles.readMoreButton}>
+        <a href={`/post/${slug}`} className={styles.readMoreButton}>
           Read More
         </a>
       </div>

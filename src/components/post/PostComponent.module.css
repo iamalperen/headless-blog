@@ -20,3 +20,18 @@
   line-height: 1.6;
   margin: 2rem 0;
 }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: #007bff;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}

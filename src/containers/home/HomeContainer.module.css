@@ -154,3 +154,10 @@
   display: inline-block;
   padding: 0.5rem;
 }
+
+.tagUrl {
+  color: #5a5a5a;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}

@@ -13,7 +13,7 @@ export const fetchLatestTags = async () => {
 };
 
 export const fetchTagBySlug = async (slug: string) => {
-  const entries = await client.getEntries({
+  const entries = await client.getEntries<TagSkeleton>({
     content_type: "tag",
     "fields.slug": slug,
     limit: 1,

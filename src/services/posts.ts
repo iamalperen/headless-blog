@@ -20,3 +20,12 @@ export const fetchPostsByCategory = async (categoryId: string) => {
   });
   return entries.items || [];
 };
+
+export const fetchPopularPosts = async () => {
+  const entries = await client.getEntries<BlogPostSkeleton>({
+    content_type: "post",
+    order: ["-fields.views"],
+    limit: 10,
+  });
+  return entries.items || [];
+};

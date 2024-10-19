@@ -11,11 +11,13 @@ import styles from "./HomeContainer.module.css";
 
 interface HomeContainerProps {
   posts: Array<Entry<BlogPostSkeleton, undefined, string>>;
+  popularPosts: Array<Entry<BlogPostSkeleton, undefined, string>>;
   categories: Array<Entry<CategorySkeleton, undefined, string>>;
 }
 
 export default function HomeContainer({
   posts,
+  popularPosts,
   categories,
 }: HomeContainerProps) {
   return (
@@ -46,6 +48,22 @@ export default function HomeContainer({
                   className={styles.category}
                 >
                   {category.fields.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.popularPosts}>
+          <h3 className={styles.popularPostsTitle}>Popular Posts</h3>
+          <ul className={styles.popularPostsList}>
+            {popularPosts.map((post) => (
+              <li key={post.fields.slug} className={styles.popularPost}>
+                <Link
+                  href={`/post/${post.fields.slug}`}
+                  className={styles.popularPostUrl}
+                >
+                  {post.fields.title}
                 </Link>
               </li>
             ))}

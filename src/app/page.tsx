@@ -1,7 +1,7 @@
 import HomeContainer from "@/containers/home/HomeContainer";
 import { createMetadata } from "@/lib/createMetadata";
 import { fetchCategories } from "@/services/categories";
-import { fetchPosts } from "@/services/posts";
+import { fetchPopularPosts, fetchPosts } from "@/services/posts";
 
 export const metadata = createMetadata({
   title: "Welcome to Headless Blog",
@@ -13,6 +13,13 @@ export const metadata = createMetadata({
 export default async function Home() {
   const posts = await fetchPosts();
   const categories = await fetchCategories();
+  const popularPosts = await fetchPopularPosts();
 
-  return <HomeContainer posts={posts} categories={categories} />;
+  return (
+    <HomeContainer
+      posts={posts}
+      categories={categories}
+      popularPosts={popularPosts}
+    />
+  );
 }

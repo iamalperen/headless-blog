@@ -36,7 +36,7 @@
   width: 100%;
 }
 
-.categoriesTitle {
+.categoriesTitle, .tagsTitle, .popularPostsTitle {
   border-bottom: 1px solid #eee;
   color: #5a5a5a;
   font-size: 1rem;
@@ -83,16 +83,6 @@
   width: 100%;
 }
 
-.popularPostsTitle {
-  border-bottom: 1px solid #eee;
-  color: #5a5a5a;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  text-align: left;
-}
-
 .popularPostsList {
   display: flex;
   flex-direction: column;
@@ -128,16 +118,6 @@
   color: #5a5a5a;
   padding: 1rem;
   width: 100%;
-}
-
-.tagsTitle {
-  border-bottom: 1px solid #eee;
-  color: #5a5a5a;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  text-align: left;
 }
 
 .tagsListContainer {

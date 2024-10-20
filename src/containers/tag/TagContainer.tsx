@@ -2,13 +2,13 @@ import { Entry } from "contentful";
 
 import { PostPreview } from "@/components/post-preview/PostPreview";
 import { parseContentfulContentImage } from "@/lib/parseContentfulImageAsset";
-import { CategorySkeleton } from "@/models/Category";
 import { BlogPostSkeleton } from "@/models/Post";
+import { TagSkeleton } from "@/models/Tag";
 
 import styles from "./TagContainer.module.css";
 
 interface TagContainerProps {
-  category: Entry<CategorySkeleton> | null;
+  tag: Entry<TagSkeleton> | null;
   posts: Array<Entry<BlogPostSkeleton, undefined, string>>;
 }
 

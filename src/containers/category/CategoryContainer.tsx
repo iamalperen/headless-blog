@@ -24,7 +24,7 @@ export const CategoryContainer = ({
     <div className={styles.category}>
       <h1 className={styles.categoryTitle}>{category.fields.name as string}</h1>
       <div className={styles.blogPosts}>
-        {posts.map((post) => (
+        {[...posts, ...posts].map((post) => (
           <PostPreview
             key={post.fields.slug}
             title={post.fields.title}

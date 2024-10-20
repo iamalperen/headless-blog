@@ -2,7 +2,6 @@ import { EntryFieldTypes } from "contentful";
 
 import { AuthorSkeleton } from "@/models/Author";
 import { CategorySkeleton } from "@/models/Category";
-import { CommentSkeleton } from "@/models/Comment";
 
 import { TagSkeleton } from "./Tag";
 
@@ -20,6 +19,5 @@ export type BlogPostSkeleton = {
     publishedDate: EntryFieldTypes.Date;
     isPopular: EntryFieldTypes.Boolean;
     views: EntryFieldTypes.Integer;
-    comments: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<CommentSkeleton>>;
   };
 };

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { PostComponent } from "@/components/post/PostComponent";
+import { PostComponent } from "@/containers/post/PostComponent";
 import { createMetadata } from "@/lib/createMetadata";
 import { fetchPostBySlug } from "@/services/posts";
 

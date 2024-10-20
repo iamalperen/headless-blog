@@ -19,7 +19,9 @@ export const TagContainer = ({ tag, posts }: TagContainerProps) => {
 
   return (
     <div className={styles.tag}>
-      <h1 className={styles.tagTitle}>{tag.fields.name as string}</h1>
+      <h1 className={styles.tagTitle}>
+        {tag.fields.name as string} tagged Blog Posts
+      </h1>
       <div className={styles.blogPosts}>
         {posts.map((post) => (
           <PostPreview

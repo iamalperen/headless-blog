@@ -22,7 +22,7 @@ export function createMetadata({
       url,
       images: [
         {
-          url: image || "/default-image.jpg",
+          url: image || "assets/placeholder.jpg",
           width: 800,
           height: 600,
           alt: title,
@@ -33,7 +33,7 @@ export function createMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image || "/default-image.jpg"],
+      images: [image || "assets/placeholder.jpg"],
     },
   };
 }

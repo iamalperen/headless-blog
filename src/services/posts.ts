@@ -49,7 +49,7 @@ export const fetchPostsByTag = async (tagId: string) => {
     content_type: "post",
     order: ["-fields.publishedDate"],
     limit: 10,
-    "fields.tags.sys.id": tagId, // Assuming 'tags' field contains the tag references
+    "fields.tags.sys.id": tagId,
   });
 
   return entries.items || [];

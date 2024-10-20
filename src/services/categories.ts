@@ -1,5 +1,3 @@
-import { Entry } from "contentful";
-
 import { CategorySkeleton } from "@/models/Category";
 
 import { client } from "./contentfulClient";
@@ -11,9 +9,7 @@ export const fetchCategories = async () => {
   return entries.items || [];
 };
 
-export const fetchCategoryBySlug = async (
-  slug: string,
-): Promise<Entry<CategorySkeleton> | null> => {
+export const fetchCategoryBySlug = async (slug: string) => {
   const entries = await client.getEntries<CategorySkeleton>({
     content_type: "category",
     "fields.slug": slug,

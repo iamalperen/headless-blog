@@ -1,7 +1,7 @@
 # Headless CMS Blog with Next.js and Contentful
 
-[![React](https://img.shields.io/badge/React-17.x-blue.svg)](https://reactjs.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-12.x-blue.svg)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18.x-blue.svg)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.x-blue.svg)](https://nextjs.org/)
 [![Contentful](https://img.shields.io/badge/Contentful-CMS-green.svg)](https://www.contentful.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
